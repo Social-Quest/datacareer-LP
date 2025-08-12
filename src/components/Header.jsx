@@ -24,7 +24,7 @@ function Header() {
                         SQL Practice
                     </Link>
                     <span
-                        className="text-[15px] sm:text-[16px] font-bold leading-6 px-2 sm:px-2.5 py-1 rounded-[10px]"
+                        className="text-[15px] sm:text-[16px] font-bold leading-6 px-2 sm:px-2.5 py-1 rounded-[10px] lg:p-1 lg:text-[15px]"
                         style={{
                             backgroundColor: '#bfe1f6',
                             color: 'var(--color_text_default, #0C153E)'
@@ -37,7 +37,7 @@ function Header() {
                 <div className="hidden lg:flex items-center gap-3">
                     <Link
                         to="/coming-soon"
-                        className="inline-flex items-center justify-center h-10 px-4 md:px-5 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95"
+                        className="inline-flex items-center justify-center h-10 px-4 md:px-5 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 lg:p-1 lg:text-[16px] lg:px-1"
                         style={{
                             backgroundColor: '#091540',
                         }}
@@ -46,7 +46,7 @@ function Header() {
                     </Link>
                     <Link
                         to="/coming-soon"
-                        className="inline-flex items-center justify-center h-10 px-4 md:px-5 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95"
+                        className="inline-flex items-center justify-center h-10 px-4 md:px-5 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 lg:text-[15px]"
                         style={{
                             backgroundColor: '#091540',
                         }}
