@@ -9,24 +9,26 @@ function Header() {
         <header className="w-full bg-white font-inter border-b border-[#cccccc] border-solid">
             <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between py-10 ">
                 <div className="flex items-center min-w-0 max-w-[200px]">
-                    <img
-                        src={logo}
-                        alt="Logo"
-                        className="h-8 sm:h-9 md:h-10 w-auto object-contain animate-gentlePulse"
-                    />
+                    <Link to="/" aria-label="Go to homepage" className="inline-flex items-center">
+                        <img
+                            src={logo}
+                            alt="datacareer.app"
+                            className="h-8 sm:h-9 md:h-10 w-auto object-contain"
+                        />
+                    </Link>
                 </div>
 
                 <nav className="hidden lg:flex items-center gap-2">
                     <Link to="/coming-soon" className="text-[15px] sm:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 h-10 flex items-center rounded-full hover:bg-gray-50">
                         Job Database
                     </Link>
-                    <Link to="/#" className="text-[15px] sm:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 h-10 flex items-center rounded-full hover:bg-gray-50">
+                    <Link to="https://datacareer-mvp-th.vercel.app/login" className="text-[15px] sm:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 h-10 flex items-center rounded-full hover:bg-gray-50">
                         SQL Practice
                     </Link>
                     <span
                         className="text-[15px] sm:text-[16px] font-bold leading-6 px-2 sm:px-2.5 py-1 rounded-[10px] lg:p-1 lg:text-[15px]"
                         style={{
-                            backgroundColor: '#bfe1f6',
+                            backgroundColor: '#abd3fa',
                             color: 'var(--color_text_default, #0C153E)'
                         }}
                     >
@@ -36,8 +38,8 @@ function Header() {
 
                 <div className="hidden lg:flex items-center gap-3">
                     <Link
-                        to="/coming-soon"
-                        className="inline-flex items-center justify-center h-10 px-4 md:px-5 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 lg:p-1 lg:text-[16px] lg:px-1"
+                        to="https://datacareer-mvp-th.vercel.app/register"
+                        className="btn-shine inline-flex items-center justify-center h-10 px-4 md:px-5 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 lg:p-1 lg:text-[16px] lg:px-1 transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_rgba(9,21,64,0.45)]"
                         style={{
                             backgroundColor: '#091540',
                         }}
@@ -45,8 +47,8 @@ function Header() {
                         ACCESS FOR FREE 🔥
                     </Link>
                     <Link
-                        to="/coming-soon"
-                        className="inline-flex items-center justify-center h-10 px-4 md:px-5 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 lg:text-[15px]"
+                        to="https://datacareer-mvp-th.vercel.app/login"
+                        className="btn-shine inline-flex items-center justify-center h-10 px-4 md:px-5 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 lg:text-[15px] transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_rgba(9,21,64,0.45)]"
                         style={{
                             backgroundColor: '#091540',
                         }}
@@ -79,7 +81,7 @@ function Header() {
                 <div className="lg:hidden border-t bg-white">
                     <div className="mx-auto max-w-[1200px] px-4 py-3 space-y-3">
                         <Link to="/coming-soon" className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">Job Database</Link>
-                        <Link to="/coming-soon" className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">SQL Practice</Link>
+                        <Link to="https://datacareer-mvp-th.vercel.app/login" className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">SQL Practice</Link>
                         <span
                             className="inline-block text-[15px] sm:text-[16px] font-normal leading-6 px-3 py-1.5 rounded-[10px]"
                             style={{
@@ -92,14 +94,14 @@ function Header() {
                         <div className="pt-2 flex items-center gap-2">
                             <Link
                                 to="/coming-soon"
-                                className="flex-1 inline-flex items-center justify-center h-10 px-4 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95"
+                                className="btn-shine flex-1 inline-flex items-center justify-center h-10 px-4 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 transition-transform duration-200 active:scale-[0.98]"
                                 style={{ backgroundColor: 'var(--color_primary_default, #091540)' }}
                             >
                                 ACCESS FOR FREE 🔥
                             </Link>
                             <Link
-                                to="/coming-soon"
-                                className="flex-1 inline-flex items-center justify-center h-10 px-4 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95"
+                                to="https://datacareer-mvp-th.vercel.app/login"
+                                className="btn-shine flex-1 inline-flex items-center justify-center h-10 px-4 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 transition-transform duration-200 active:scale-[0.98]"
                                 style={{ backgroundColor: 'var(--color_primary_default, #091540)' }}
                             >
                                 SIGN IN

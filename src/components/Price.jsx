@@ -85,11 +85,11 @@ function Price() {
           
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 md:[grid-template-columns:repeat(2,max-content)] gap-6 md:gap-6 items-stretch md:justify-center">
           {plans.map((plan, idx) => (
             <Reveal
               key={plan.id}
-              className={`rounded-2xl border border-[#E6ECF2] bg-[#f8f9fb] p-6 sm:p-8 shadow-sm font-inter ${
+              className={`w-full md:w-[360px] lg:w-[380px] rounded-2xl border border-[#E6ECF2] bg-[#f8f9fb] p-6 sm:p-8 shadow-sm font-inter h-full flex flex-col ${
                 plan.highlight ? 'ring-1 ring-[#7692FF]/40' : ''
               }`}
               delay={idx * 150}
@@ -126,7 +126,7 @@ function Price() {
                 ))}
               </ul>
 
-              <div className="mt-8 flex flex-col items-center justify-center animate-gentlePulse">
+              <div className="mt-8 pt-2 flex flex-col items-center justify-center animate-gentlePulse mt-auto">
                 <button
                   type="button"
                   className={`w-full sm:w-[220px] md:w-[240px] font-inter text-sm md:text-base rounded-[30px] px-6 py-3 transition-colors font-semibold cursor-pointer  ${
