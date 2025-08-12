@@ -11,6 +11,8 @@ import Price from './components/Price'
 import Map from './components/Map'
 import Footer from './components/Footer'
 import ComingSoon from './components/ComingSoon'
+import HowItWorks from './components/HowItWorks'
+import FAQ from './components/FAQ'
 
 function App() {
 
@@ -34,7 +36,9 @@ function App() {
                   <DataSkies />
                   <DataSQL />
                   <Price />
+                  <HowItWorks />
                   <Map />
+                  <FAQ />
                 </>
               )}
             />
