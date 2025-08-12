@@ -106,7 +106,7 @@ function Price() {
                     </span>
                   )}
                 </div>
-                <div className="font-roboto text-2xl sm:text-3xl md:text-[24px] tracking-wide text-[#121f41] leading-[29px] font-semibold tracking-[-1px]">
+                <div className="font-roboto text-[28px] sm:text-[32px] md:text-[36px] tracking-wide text-[#121f41] leading-tight font-semibold tracking-[-0.5px]">
                   {`AUD ${plan.monthlyPrice.toFixed(2)} / month`}
                 </div>
               </div>
@@ -129,7 +129,7 @@ function Price() {
               <div className="mt-8 flex flex-col items-center justify-center animate-gentlePulse">
                 <button
                   type="button"
-                  className={`w-full sm:w-[200px] font-inter text-sm md:text-base rounded-[30px] px-6 py-3 transition-colors font-semibold cursor-pointer  ${
+                  className={`w-full sm:w-[220px] md:w-[240px] font-inter text-sm md:text-base rounded-[30px] px-6 py-3 transition-colors font-semibold cursor-pointer  ${
                     plan.highlight
                       ? 'bg-[#448aff] text-black hover:bg-[#2563EB] '
                       : 'bg-[#eaf1f9] text-[#121f41] border border-[#d0e3ec] hover:bg-[#dfeaf4]'
@@ -142,15 +142,15 @@ function Price() {
           ))}
         </div>
 
-        {/** Comparison table */}
-        <Reveal className="mt-12" variant="fade-up">
+        {/** Comparison table - desktop/tablet */}
+        <Reveal className="mt-12 hidden md:block" variant="fade-up">
           <div className="overflow-x-auto">
-            <table className="min-w-[640px] w-full border border-[#E6ECF2] rounded-xl overflow-hidden">
+            <table className="min-w-[640px] w-full border border-[#E6ECF2] rounded-xl overflow-hidden text-sm">
               <thead className="bg-[#f8f9fb]">
                 <tr>
-                  <th className="text-left px-4 py-3 font-inter text-sm text-[#475467]">Feature</th>
+                  <th className="text-left px-4 py-3 font-inter text-[#475467]">Feature</th>
                   {plans.map((p) => (
-                    <th key={`head-${p.id}`} className="text-center px-4 py-3 font-inter text-sm text-[#475467]">{p.name}</th>
+                    <th key={`head-${p.id}`} className="text-center px-4 py-3 font-inter text-[#475467]">{p.name}</th>
                   ))}
                 </tr>
               </thead>
@@ -178,6 +178,62 @@ function Price() {
               </tbody>
             </table>
           </div>
+        </Reveal>
+
+        {/** Mobile comparison list */}
+        <Reveal className="mt-12 md:hidden" variant="fade-up">
+        <div className="space-y-3">
+  {/* Header Row */}
+  <div className="grid grid-cols-[1fr,56px,56px] items-center rounded-xl bg-[#f8f9fb] px-4 py-3 text-xs font-medium text-[#475467] shadow-sm">
+    <span className="uppercase tracking-wide">Feature</span>
+    {plans.map((p) => (
+      <span
+        key={`mh-${p.id}`}
+        className="text-center text-[13px] font-semibold text-[#121f41]"
+      >
+        {p.name}
+      </span>
+    ))}
+  </div>
+
+  {/* Feature Rows */}
+  {Array.from(new Set(plans.flatMap((p) => p.features.map((f) => f.label))))
+    .slice(0, -2)
+    .map((label, idx) => (
+      <div
+        key={`m-${label}`}
+        className={`grid grid-cols-[1fr,56px,56px] items-center rounded-xl px-4 py-3 text-sm transition ${
+          idx % 2 === 0 ? "bg-white border border-[#E6ECF2]" : "bg-[#f8f9fb]"
+        }`}
+      >
+        {/* Feature Name */}
+        <span className="font-medium text-[#121f41] pr-2">{label}</span>
+
+        {/* Availability Checks */}
+        {plans.map((p) => {
+          const found = p.features.find((f) => f.label === label);
+          const available = Boolean(found?.available);
+          return (
+            <span
+              key={`m-${p.id}-${label}`}
+              className="flex items-center justify-center"
+            >
+              <span
+                className={`inline-flex h-6 w-6 items-center justify-center rounded-full text-sm font-bold ${
+                  available
+                    ? "bg-[#eaf1f9] text-[#121f41]"
+                    : "bg-gray-200 text-gray-500"
+                }`}
+              >
+                {available ? "✓" : "×"}
+              </span>
+            </span>
+          );
+        })}
+      </div>
+    ))}
+</div>
+
         </Reveal>
       </div>
     </section>
