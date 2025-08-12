@@ -6,13 +6,14 @@ function Price() {
     {
       id: 'free',
       name: 'Free',
-      priceLabel: 'AUD 0 / month',
+      monthlyPrice: 0,
+      yearlyPrice: 0,
       cta: 'SIGN UP',
       highlight: false,
       features: [
         { label: 'Access to 10 of the 300+ jobs added daily', available: true },
         { label: 'Complete access to job tracker', available: true },
-        { label: 'SQL Practice [Coming Soon]', available: true },
+        { label: 'SQL Practice', available: true },
         { label: '30 days worth of data', available: false },
         { label: 'Download as CSV', available: false },
       ],
@@ -20,13 +21,18 @@ function Price() {
     {
       id: 'pro',
       name: 'Pro',
-      priceLabel: 'AUD 4.90 / month',
+      monthlyPrice: 4.9,
+      yearlyPrice: 49,
       cta: 'SIGN UP',
       highlight: true,
       features: [
+        // Match Free plan labels so the first two rows show as available for Pro
+        { label: 'Access to 10 of the 300+ jobs added daily', available: true },
+        { label: 'Complete access to job tracker', available: true },
+        // Pro-specific phrasing and additional capabilities
         { label: '300+ curated data job added daily at 7 am AEST', available: true },
         { label: 'Access to job tracker', available: true },
-        { label: 'SQL Practice [Coming Soon]', available: true },
+        { label: 'SQL Practice', available: true },
         { label: '30 days worth of data', available: true },
         { label: 'Download as CSV', available: true },
       ],
@@ -76,6 +82,7 @@ function Price() {
           <Reveal as="p" className="font-roboto text-[#7692FF] mt-3 text-base sm:text-lg md:text-[22px] font-medium leading-[33px]" delay={150} variant="fade-up">
             Choose the best plan to fit your needs.
           </Reveal>
+          
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -89,13 +96,18 @@ function Price() {
               variant={idx % 2 === 0 ? 'tilt-in' : 'skew-up'}
             >
               <div>
-                <div className="pb-3 mb-4 border-b-[2px] border-[#768bff]">
+                <div className="pb-3 mb-4 border-b-[2px] border-[#768bff] flex items-center justify-between gap-3">
                   <h3 className="font-inter text-lg sm:text-xl md:text-[20px] font-medium text-[#121f41] leading-[24px] ">
                     {plan.name}
                   </h3>
+                  {plan.highlight && (
+                    <span className="inline-block rounded-full bg-[#eaf1f9] text-[#121f41] border border-[#d0e3ec] px-2.5 py-1 text-xs font-semibold whitespace-nowrap">
+                      Most popular
+                    </span>
+                  )}
                 </div>
                 <div className="font-roboto text-2xl sm:text-3xl md:text-[24px] tracking-wide text-[#121f41] leading-[29px] font-semibold tracking-[-1px]">
-                  {plan.priceLabel}
+                  {`AUD ${plan.monthlyPrice.toFixed(2)} / month`}
                 </div>
               </div>
 
@@ -114,7 +126,7 @@ function Price() {
                 ))}
               </ul>
 
-              <div className="mt-8 flex justify-center animate-gentlePulse">
+              <div className="mt-8 flex flex-col items-center justify-center animate-gentlePulse">
                 <button
                   type="button"
                   className={`w-full sm:w-[200px] font-inter text-sm md:text-base rounded-[30px] px-6 py-3 transition-colors font-semibold cursor-pointer  ${
@@ -125,10 +137,48 @@ function Price() {
                 >
                   {plan.cta}
                 </button>
-              </div>
+                  </div>
             </Reveal>
           ))}
         </div>
+
+        {/** Comparison table */}
+        <Reveal className="mt-12" variant="fade-up">
+          <div className="overflow-x-auto">
+            <table className="min-w-[640px] w-full border border-[#E6ECF2] rounded-xl overflow-hidden">
+              <thead className="bg-[#f8f9fb]">
+                <tr>
+                  <th className="text-left px-4 py-3 font-inter text-sm text-[#475467]">Feature</th>
+                  {plans.map((p) => (
+                    <th key={`head-${p.id}`} className="text-center px-4 py-3 font-inter text-sm text-[#475467]">{p.name}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {Array.from(
+                  new Set(plans.flatMap((p) => p.features.map((f) => f.label)))
+                )
+                  .slice(0, -2)
+                  .map((label) => (
+                  <tr key={label} className="border-t border-[#E6ECF2]">
+                    <td className="px-4 py-3 font-inter text-sm text-[#121f41]">{label}</td>
+                    {plans.map((p) => {
+                      const found = p.features.find((f) => f.label === label)
+                      const available = Boolean(found?.available)
+                      return (
+                        <td key={`${p.id}-${label}`} className="px-4 py-3 text-center">
+                          <span className={`${available ? 'bg-[#eaf1f9] text-[#121f41]' : 'bg-gray-200 text-gray-500'} inline-flex h-5 w-5 items-center justify-center rounded-full mx-auto`}>
+                            {available ? '✓' : '×'}
+                          </span>
+                        </td>
+                      )
+                    })}
+                  </tr>
+                  ))}
+              </tbody>
+            </table>
+          </div>
+        </Reveal>
       </div>
     </section>
   )
