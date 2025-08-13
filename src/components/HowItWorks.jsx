@@ -58,8 +58,8 @@ function HowItWorks() {
 
         <Reveal className="mt-8 flex justify-center" delay={400} variant="fade-up">
           <Link
-            to="/coming-soon"
-            className="inline-flex items-center justify-center rounded-full bg-[#091540] text-white px-6 py-3 text-[16px] font-bold hover:opacity-95"
+            to="https://datacareer-mvp-th.vercel.app/register"
+            className="btn-shine inline-flex items-center justify-center rounded-full bg-[#091540] text-white px-6 py-3 text-[16px] font-bold hover:opacity-95"
           >
             Get started
           </Link>

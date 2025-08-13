@@ -15,16 +15,16 @@ function ComingSoon() {
           <div className="mt-8 flex items-center justify-center gap-3">
             <Link
               to="/"
-              className="font-inter rounded-full bg-[#eaf1f9] text-[#121f41] border border-[#d0e3ec] px-5 py-2.5 text-sm sm:text-base"
+              className="btn-shine font-inter rounded-full bg-[#eaf1f9] text-[#121f41] border border-[#d0e3ec] px-5 py-2.5 text-sm sm:text-base"
             >
               Back to Home
             </Link>
-            <a
-              href="mailto:info@datacareer.app"
-              className="font-inter rounded-full bg-[#091540] text-white px-5 py-2.5 text-sm sm:text-base"
+            <Link
+              to="mailto:info@datacareer.app"
+              className="btn-shine font-inter rounded-full bg-[#091540] text-white px-5 py-2.5 text-sm sm:text-base"
             >
               Contact us
-            </a>
+            </Link>
           </div>
         </div>
       </div>

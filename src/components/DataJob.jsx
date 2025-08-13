@@ -44,7 +44,7 @@ function DataJob() {
         { id: 'advanced', icon: '💡', text: 'Develop advanced SQL skills' },
         { id: 'exec-env', icon: '⌨️', text: 'Code SQL using our code execution environment' },
       ],
-      cta: { label: 'Coming Soon', to: '#', variant: 'disabled' },
+      cta: { label: 'ACCESS FOR FREE 🔥', to: '#', variant: 'primary' },
       image: jobGif2,
     },
     {
@@ -96,8 +96,8 @@ function DataJob() {
                 <div className="mt-6 md:mt-8">
                   {cta.variant === 'primary' ? (
                     <Link
-                      to={cta.to}
-                      className="inline-flex w-full sm:w-auto items-center justify-center h-11 px-6 rounded-full text-[16px] font-bold text-white bg-[#091540] shadow-[0_7px_30px_-10px_rgba(9,21,64,0.25)] hover:opacity-95"
+                      to="https://datacareer-mvp-th.vercel.app/login"
+                      className="btn-shine inline-flex w-full sm:w-auto items-center justify-center h-11 px-6 rounded-full text-[16px] font-bold text-white bg-[#091540] shadow-[0_7px_30px_-10px_rgba(9,21,64,0.25)] hover:opacity-95"
                     >
                       {cta.label}
                     </Link>

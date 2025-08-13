@@ -29,7 +29,7 @@ function App() {
               path="/"
               element={(
                 <>
-                  <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+                  <div className="bg-white">
                     <SpreadSheet />
                   </div>
                   <DataJob />
@@ -39,7 +39,7 @@ function App() {
                   <HowItWorks />
                   <Map />
                   <FAQ />
-                </>
+                  </>
               )}
             />
             <Route path="/coming-soon" element={<ComingSoon />} />

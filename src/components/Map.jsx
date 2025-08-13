@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import mapImage from '../assets/map.png'
 import Reveal from './Reveal'
 
@@ -60,12 +61,14 @@ function Map() {
             </Reveal>
 
             <Reveal className="mt-8" delay={250} variant="zoom-in">
-              <button
-                type="button"
-                className="inline-flex items-center justify-center rounded-full bg-[#abd4f9] hover:bg-[#2563EB] text-black font-semibold font-inter text-sm sm:text-base px-5 sm:px-6 py-2.5 shadow-md transition-colors"
+              <Link
+                to="https://datacareer-mvp-th.vercel.app/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-shine inline-flex items-center justify-center rounded-full bg-[#091540] text-white font-bold font-inter text-sm sm:text-base px-5 sm:px-6 py-2.5 shadow-md transition-colors hover:opacity-95"
               >
                 ACCESS FOR FREE 🔥
-              </button>
+              </Link>
             </Reveal>
           </div>
         </div>

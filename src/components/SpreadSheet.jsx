@@ -13,8 +13,8 @@ function Pill({ children }) {
 function CTAButton() {
   return (
     <Link
-      to="#free"
-      className="inline-flex w-full sm:w-auto items-center justify-center h-11 px-6 rounded-full text-[16px] font-bold text-white bg-[#091540] shadow-[0_7px_30px_-10px_rgba(9,21,64,0.25)] hover:opacity-95"
+      to="https://datacareer-mvp-th.vercel.app/login"
+      className="btn-shine inline-flex w-full sm:w-auto items-center justify-center h-11 px-6 rounded-full text-[16px] font-bold text-white bg-[#091540] shadow-[0_7px_30px_-10px_rgba(9,21,64,0.25)] hover:opacity-95"
     >
       ACCESS FOR FREE 🔥
     </Link>
@@ -47,7 +47,7 @@ function SpreadSheet() {
   const shown = 'opacity-100 translate-y-0'
 
   return (
-    <section ref={sectionRef} className="font-roboto mx-auto w-full max-w-[1200px] py-8 md:py-12 lg:py-[96px] grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
+    <section ref={sectionRef} className="font-roboto mx-auto w-full max-w-[1200px] py-8 md:py-12 lg:py-[96px] grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center bg-white px-4 sm:px-6 lg:px-8 " >
       <div>
         <div className={`transition-all duration-700 ease-out ${inView ? shown : hidden}`}>
           <Pill>
@@ -67,7 +67,7 @@ function SpreadSheet() {
       </div>
 
       <div className={`mt-8 md:mt-0 flex w-full items-center justify-center transition-all duration-700 ease-out ${inView ? shown : hidden} delay-500`}>
-        <img src={spreadsheet} alt="Spreadsheet" className="w-full max-w-[460px] sm:max-w-[560px] h-auto object-contain drop-shadow" />
+        <img src={spreadsheet} alt="Spreadsheet" className="w-full max-w-[460px] sm:max-w-[560px] h-auto object-contain" />
       </div>
     </section>
   )

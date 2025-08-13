@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect, useLayoutEffect } from 'react'
 import Reveal from './Reveal'
 
 const faqs = [
@@ -26,6 +26,31 @@ const faqs = [
 
 function Item({ q, a, idx }) {
   const [open, setOpen] = useState(false)
+  const contentRef = useRef(null)
+  const [maxHeight, setMaxHeight] = useState('0px')
+
+  // Measure content height precisely (includes dynamic content) and animate
+  useLayoutEffect(() => {
+    const el = contentRef.current
+    if (!el) return
+
+    const measure = () => {
+      setMaxHeight(open ? `56px` : '0px')
+    }
+
+    measure()
+
+    let ro
+    if ('ResizeObserver' in window) {
+      ro = new ResizeObserver(() => measure())
+      ro.observe(el)
+    }
+
+    return () => {
+      if (ro) ro.disconnect()
+    }
+  }, [open])
+
   return (
     <Reveal as="div" className="border-b border-[#E6ECF2] py-4" delay={idx * 80} variant={idx % 2 ? 'fade-left' : 'fade-right'}>
       <button
@@ -36,12 +61,17 @@ function Item({ q, a, idx }) {
       >
         <span className="font-inter text-[16px] sm:text-[17px] font-semibold text-[#121f41]">{q}</span>
         <span className="ml-4 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#eaf1f9] text-[#121f41]">
-          {open ? '-' : '+'}
+          {open ? '×' : '+'}
         </span>
       </button>
-      {open && (
-        <div className="mt-3 font-inter text-[14px] text-[#475467] leading-6">{a}</div>
-      )}
+      <div
+        className="overflow-hidden transition-[max-height] duration-300 ease-out"
+        style={{ maxHeight }}
+      >
+        <div ref={contentRef} className="mt-3 font-inter text-[14px] text-[#475467] leading-6">
+          {a}
+        </div>
+      </div>
     </Reveal>
   )
 }
