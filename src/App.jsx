@@ -13,6 +13,8 @@ import Footer from './components/Footer'
 import ComingSoon from './components/ComingSoon'
 import HowItWorks from './components/HowItWorks'
 import FAQ from './components/FAQ'
+import PrivacyPolicy from './components/PrivacyPolicy'
+import TermsOfService from './components/TermsOfService'
 
 function App() {
 
@@ -43,6 +45,8 @@ function App() {
               )}
             />
             <Route path="/coming-soon" element={<ComingSoon />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} />
           </Routes>
         </main>
         <Footer />

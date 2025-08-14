@@ -12,15 +12,12 @@ function ScrollToTop() {
   }, [])
 
   useEffect(() => {
-    // Always open the homepage at the top
-    if (pathname === '/') {
-      // Ensure this runs after the new route paints
+    // On every internal navigation, scroll to the top smoothly
+    requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-        })
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
       })
-    }
+    })
   }, [pathname])
 
   return null

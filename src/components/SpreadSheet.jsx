@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { LOGIN_URL } from '../config/env'
 import spreadsheet from '../assets/spreadeSheet.svg'
 
 function Pill({ children }) {
@@ -13,7 +14,7 @@ function Pill({ children }) {
 function CTAButton() {
   return (
     <Link
-      to="https://datacareer-mvp-th.vercel.app/login"
+      to={LOGIN_URL}
       className="btn-shine inline-flex w-full sm:w-auto items-center justify-center h-11 px-6 rounded-full text-[16px] font-bold text-white bg-[#091540] shadow-[0_7px_30px_-10px_rgba(9,21,64,0.25)] hover:opacity-95"
     >
       ACCESS FOR FREE 🔥

@@ -5,7 +5,7 @@ import Reveal from './Reveal'
 function DataSQL() {
   return (
     <section className="w-full bg-[#091540]">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-10 md:py-30">
+      <div className="mx-auto max-w-[1200px] sm:px-6 py-10 md:py-30">
         <div className="text-center">
           <Reveal as="h2" className="font-roboto text-white text-[26px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-tight" variant="fade-up">
             SQL: your golden ticket to landing a <span className="text-[#7692FF]">#data</span> job.

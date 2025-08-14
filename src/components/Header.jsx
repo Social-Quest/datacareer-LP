@@ -1,15 +1,40 @@
 import React, { useState } from 'react'
 import logo from '../assets/DataCareerLogo.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { LOGIN_URL, REGISTER_URL } from '../config/env'
 
 function Header() {
     const [mobileOpen, setMobileOpen] = useState(false)
+    const navigate = useNavigate()
+
+    const scrollThenNavigate = (to, external = false) => (e) => {
+        e.preventDefault()
+        const go = () => {
+            if (external) {
+                window.location.href = to
+            } else {
+                navigate(to)
+            }
+        }
+        if (window.scrollY <= 1) {
+            go()
+            return
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        const start = Date.now()
+        const id = setInterval(() => {
+            if (window.scrollY <= 1 || Date.now() - start > 1200) {
+                clearInterval(id)
+                go()
+            }
+        }, 60)
+    }
 
     return (
         <header className="w-full bg-white font-inter border-b border-[#cccccc] border-solid">
             <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between py-10 ">
                 <div className="flex items-center min-w-0 max-w-[200px]">
-                    <Link to="/" aria-label="Go to homepage" className="inline-flex items-center">
+                    <Link to="/" onClick={scrollThenNavigate('/')} aria-label="Go to homepage" className="inline-flex items-center">
                         <img
                             src={logo}
                             alt="datacareer.app"
@@ -19,10 +44,10 @@ function Header() {
                 </div>
 
                 <nav className="hidden lg:flex items-center gap-2">
-                    <Link to="/coming-soon" className="text-[15px] sm:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 h-10 flex items-center rounded-full hover:bg-gray-50">
+                    <Link to="/coming-soon" onClick={scrollThenNavigate('/coming-soon')} className="text-[15px] sm:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 h-10 flex items-center rounded-full hover:bg-gray-50">
                         Job Database
                     </Link>
-                    <Link to="https://datacareer-mvp-th.vercel.app/login" className="text-[15px] sm:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 h-10 flex items-center rounded-full hover:bg-gray-50">
+                    <Link to={LOGIN_URL} onClick={scrollThenNavigate(LOGIN_URL, true)} className="text-[15px] sm:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 h-10 flex items-center rounded-full hover:bg-gray-50">
                         SQL Practice
                     </Link>
                     <span
@@ -38,7 +63,7 @@ function Header() {
 
                 <div className="hidden lg:flex items-center gap-3">
                     <Link
-                        to="https://datacareer-mvp-th.vercel.app/register"
+                        to={REGISTER_URL}
                         className="btn-shine inline-flex items-center justify-center h-10 px-4 md:px-5 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 lg:p-1 lg:text-[16px] lg:px-3 transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_rgba(9,21,64,0.45)] "
                         style={{
                             backgroundColor: '#091540',
@@ -47,7 +72,7 @@ function Header() {
                         ACCESS FOR FREE 🔥
                     </Link>
                     <Link
-                        to="https://datacareer-mvp-th.vercel.app/login"
+                        to={LOGIN_URL}
                         className="btn-shine inline-flex items-center justify-center h-10 px-4 md:px-5 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 lg:text-[15px] transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_rgba(9,21,64,0.45)]"
                         style={{
                             backgroundColor: '#091540',
@@ -80,12 +105,12 @@ function Header() {
             {mobileOpen && (
                 <div className="lg:hidden border-t bg-white">
                     <div className="mx-auto max-w-[1200px] px-4 py-3 space-y-3">
-                        <Link to="/coming-soon" className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">Job Database</Link>
-                        <Link to="https://datacareer-mvp-th.vercel.app/login" className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">SQL Practice</Link>
+                        <Link to="/coming-soon" onClick={scrollThenNavigate('/coming-soon')} className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">Job Database</Link>
+                        <Link to={LOGIN_URL} onClick={scrollThenNavigate(LOGIN_URL, true)} className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">SQL Practice</Link>
                         <span
-                            className="inline-block text-[15px] sm:text-[16px] font-normal leading-6 px-3 py-1.5 rounded-[10px]"
+                            className="btn-shine inline-block text-[15px] sm:text-[16px] font-normal leading-6 px-3 py-1.5 rounded-[10px]"
                             style={{
-                                backgroundColor: 'var(--color_alert_default, #FFD7A8)',
+                                backgroundColor: '#abd3fa',
                                 color: 'var(--color_text_default, #0C153E)'
                             }}
                         >
@@ -100,7 +125,7 @@ function Header() {
                                 ACCESS FOR FREE 🔥
                             </Link>
                             <Link
-                                to="https://datacareer-mvp-th.vercel.app/login"
+                                to={LOGIN_URL}
                                 className="btn-shine flex-1 inline-flex items-center justify-center h-10 px-4 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 transition-transform duration-200 active:scale-[0.98]"
                                 style={{ backgroundColor: 'var(--color_primary_default, #091540)' }}
                             >

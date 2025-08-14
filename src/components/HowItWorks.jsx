@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { REGISTER_URL } from '../config/env'
 import { FaRocket, FaMagnifyingGlass, FaDatabase } from 'react-icons/fa6'
 import Reveal from './Reveal'
 
@@ -58,7 +59,7 @@ function HowItWorks() {
 
         <Reveal className="mt-8 flex justify-center" delay={400} variant="fade-up">
           <Link
-            to="https://datacareer-mvp-th.vercel.app/register"
+            to={REGISTER_URL}
             className="btn-shine inline-flex items-center justify-center rounded-full bg-[#091540] text-white px-6 py-3 text-[16px] font-bold hover:opacity-95"
           >
             Get started

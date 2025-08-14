@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { LOGIN_URL } from '../config/env'
 import sheet from '../assets/spreadeSheet.svg'
 import Reveal from './Reveal'
 
@@ -41,7 +42,7 @@ function DataSkies() {
 
         <Reveal className="mt-8 flex justify-center" delay={250} variant="fade-up">
           <Link
-            to="https://datacareer-mvp-th.vercel.app/login"
+            to={LOGIN_URL}
             className="btn-shine inline-flex items-center justify-center h-11 px-6 rounded-full text-[16px] font-bold text-white bg-[#091540] shadow-[0_7px_30px_-10px_rgba(9,21,64,0.25)] hover:opacity-95"
           >
             ACCESS FOR FREE 🔥

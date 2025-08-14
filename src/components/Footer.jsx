@@ -13,6 +13,17 @@ const socialLinks = [
 ]
 
 function Footer() {
+  const handleScrollTo = (id) => (e) => {
+    e.preventDefault()
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+  const handleScrollTop = (e) => {
+    e.preventDefault()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
   return (
     <footer className="w-full bg-white border-t border-[#e5e7eb] font-roboto text-[#0C153E]">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-12">
@@ -44,15 +55,27 @@ function Footer() {
           <Reveal delay={100} variant="blur-up">
             <h3 className="text-sm font-semibold mb-3 text-[#0C153E]">Features</h3>
             <ul className="space-y-3 text-[14px] text-[#0C153E]">
-              {['Job Database', 'SQL Practice', 'Job Tracker', 'Data Analyst jobs', 'Data Engineer jobs', 'Data adjacent roles', 'Pricing'].map(
-                (item) => (
-                  <li key={item}>
-                    <Link to="#" className="hover:underline">
-                      {item}
-                    </Link>
-                  </li>
-                )
-              )}
+              <li>
+                <Link to="#jobs" onClick={handleScrollTop} className="hover:underline">Job Database</Link>
+              </li>
+              <li>
+                <Link to="#sql" onClick={handleScrollTop} className="hover:underline">SQL Practice</Link>
+              </li>
+              <li>
+                <Link to="#tracker" onClick={handleScrollTop} className="hover:underline">Job Tracker</Link>
+              </li>
+              <li>
+                <Link to="#roles" onClick={handleScrollTop} className="hover:underline">Data Analyst jobs</Link>
+              </li>
+              <li>
+                <Link to="#engineer" onClick={handleScrollTop} className="hover:underline">Data Engineer jobs</Link>
+              </li>
+              <li>
+                <Link to="#adjacent" onClick={handleScrollTop} className="hover:underline">Data adjacent roles</Link>
+              </li>
+              <li>
+                <Link to="#pricing" onClick={handleScrollTo('pricing')} className="hover:underline">Pricing</Link>
+              </li>
             </ul>
           </Reveal>
 
@@ -74,12 +97,12 @@ function Footer() {
             <h3 className="text-sm font-semibold mb-3 text-[#0C153E]">Support:</h3>
             <ul className="space-y-3 text-[14px] text-[#0C153E]">
               <li>
-                <Link to="#privacy" className="hover:underline">
+                <Link to="/privacy" className="hover:underline">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="#terms" className="hover:underline">
+                <Link to="/terms" className="hover:underline">
                   Terms & Conditions
                 </Link>
               </li>

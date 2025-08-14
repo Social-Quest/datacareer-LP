@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Reveal from './Reveal'
+import { LOGIN_URL } from '../config/env'
 
 function Price() {
   const plans = [
@@ -73,7 +75,7 @@ function Price() {
   )
 
   return (
-    <section className="w-full bg-white">
+    <section id="pricing" className="w-full bg-white">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-12 md:py-30">
         <div className="text-center">
           <Reveal as="h2" className="font-roboto text-[#121f41] text-[26px] sm:text-[25px] md:text-[30px] lg:text-[32px] font-semibold leading-[38px]" variant="fade-up">
@@ -127,17 +129,17 @@ function Price() {
               </ul>
 
               <div className="mt-8 pt-2 flex flex-col items-center justify-center animate-gentlePulse mt-auto">
-                <button
-                  type="button"
-                  className={`w-full sm:w-[220px] md:w-[240px] font-inter text-sm md:text-base rounded-[30px] px-6 py-3 transition-colors font-semibold cursor-pointer  ${
+                <Link
+                  to={LOGIN_URL}
+                  className={`btn-shine w-full sm:w-[220px] md:w-[240px] inline-flex items-center justify-center font-inter text-sm md:text-base rounded-[30px] px-6 py-3 transition-colors font-semibold cursor-pointer  ${
                     plan.highlight
                       ? 'bg-[#448aff] text-black hover:bg-[#2563EB] '
                       : 'bg-[#eaf1f9] text-[#121f41] border border-[#d0e3ec] hover:bg-[#dfeaf4]'
                   }`}
                 >
                   {plan.cta}
-                </button>
-                  </div>
+                </Link>
+              </div>
             </Reveal>
           ))}
         </div>
