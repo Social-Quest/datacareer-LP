@@ -15,6 +15,7 @@ import HowItWorks from './components/HowItWorks'
 import FAQ from './components/FAQ'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import TermsOfService from './components/TermsOfService'
+import Contact from './components/Contact'
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
             <Route path="/coming-soon" element={<ComingSoon />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />
