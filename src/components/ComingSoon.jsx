@@ -20,7 +20,7 @@ function ComingSoon() {
               Back to Home
             </Link>
             <Link
-              to="mailto:info@datacareer.app"
+              to="/contact"
               className="btn-shine font-inter rounded-full bg-[#091540] text-white px-5 py-2.5 text-sm sm:text-base"
             >
               Contact us

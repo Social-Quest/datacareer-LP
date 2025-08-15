@@ -44,7 +44,7 @@ function Header() {
                 </div>
 
                 <nav className="hidden lg:flex items-center gap-2">
-                    <Link to="/coming-soon" onClick={scrollThenNavigate('/coming-soon')} className="text-[15px] sm:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 h-10 flex items-center rounded-full hover:bg-gray-50">
+                    <Link to="/coming-soon" className="text-[15px] sm:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 h-10 flex items-center rounded-full hover:bg-gray-50">
                         Job Database
                     </Link>
                     <Link to={LOGIN_URL} onClick={scrollThenNavigate(LOGIN_URL, true)} className="text-[15px] sm:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 h-10 flex items-center rounded-full hover:bg-gray-50">
@@ -108,7 +108,7 @@ function Header() {
             {mobileOpen && (
                 <div className="lg:hidden border-t bg-white">
                     <div className="mx-auto max-w-[1200px] px-4 py-3 space-y-3">
-                        <Link to="/coming-soon" onClick={scrollThenNavigate('/coming-soon')} className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">Job Database</Link>
+                        <Link to="/coming-soon" className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">Job Database</Link>
                         <Link to={LOGIN_URL} onClick={scrollThenNavigate(LOGIN_URL, true)} className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">SQL Practice</Link>
                         <Link to="/contact" onClick={scrollThenNavigate('/contact')} className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">Contact</Link>
                         <span
