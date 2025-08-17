@@ -67,7 +67,7 @@ function Header() {
                 <div className="hidden lg:flex items-center gap-3">
                     <Link
                         to={REGISTER_URL}
-                        className="btn-shine inline-flex items-center justify-center h-10 px-2 md:px-5 rounded-full text-[11px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 lg:p-1 lg:text-[16px] lg:px-3 transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_rgba(9,21,64,0.45)] "
+                        className="btn-shine inline-flex items-center justify-center h-10 px-4 md:px-5 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 lg:p-1 lg:text-[16px] lg:px-3 transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_rgba(9,21,64,0.45)] "
                         style={{
                             backgroundColor: '#091540',
                         }}
@@ -123,14 +123,14 @@ function Header() {
                         <div className="pt-2 flex items-center gap-2">
                             <Link
                                 to="/coming-soon"
-                                className="btn-shine flex-1 inline-flex items-center justify-center h-10 px-4 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 transition-transform duration-200 active:scale-[0.98]"
+                                className="btn-shine flex-1 inline-flex items-center justify-center h-10 px-3 rounded-full text-[11px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 transition-transform duration-200 active:scale-[0.98]"
                                 style={{ backgroundColor: 'var(--color_primary_default, #091540)' }}
                             >
                                 ACCESS FOR FREE 🔥
                             </Link>
                             <Link
                                 to={LOGIN_URL}
-                                className="btn-shine flex-1 inline-flex items-center justify-center h-10 px-4 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 transition-transform duration-200 active:scale-[0.98]"
+                                className="btn-shine flex-1 inline-flex items-center justify-center h-10 px-1 rounded-full text-[13px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 transition-transform duration-200 active:scale-[0.98]"
                                 style={{ backgroundColor: 'var(--color_primary_default, #091540)' }}
                             >
                                 SIGN IN
