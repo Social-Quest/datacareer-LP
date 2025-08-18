@@ -106,7 +106,7 @@ function Header() {
 
             {/* Mobile menu */}
             {mobileOpen && (
-                <div className="lg:hidden border-t bg-white">
+                <div className="lg:hidden border-t border-[#cccccc] bg-white">
                     <div className="mx-auto max-w-[1200px] px-4 py-3 space-y-3">
                         <Link to="/coming-soon" className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">Job Database</Link>
                         <Link to={LOGIN_URL} className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">SQL Practice</Link>
@@ -130,7 +130,7 @@ function Header() {
                             </Link>
                             <Link
                                 to={LOGIN_URL}
-                                className="btn-shine flex-1 inline-flex items-center justify-center h-10 px-1 rounded-full text-[13px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 transition-transform duration-200 active:scale-[0.98]"
+                                className="btn-shine flex-1 inline-flex items-center justify-center h-10  rounded-full text-[13px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 transition-transform duration-200 active:scale-[0.98]"
                                 style={{ backgroundColor: 'var(--color_primary_default, #091540)' }}
                             >
                                 SIGN IN
