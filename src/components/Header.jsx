@@ -54,7 +54,7 @@ function Header() {
                         Contact
                     </Link>
                     <span
-                        className="text-[15px] sm:text-[16px] font-bold leading-6 px-2 sm:px-2.5 py-1 rounded-[10px] lg:p-1 lg:text-[15px]"
+                        className="text-[15px] sm:text-[16px] font-bold leading-6 px-4 sm:px-2.5 py-1 rounded-full lg:p-1 lg:text-[15px]"
                         style={{
                             backgroundColor: '#abd3fa',
                             color: 'var(--color_text_default, #0C153E)'
@@ -106,7 +106,7 @@ function Header() {
 
             {/* Mobile menu */}
             {mobileOpen && (
-                <div className="lg:hidden border-t border-[#cccccc] bg-white">
+                    <div className="lg:hidden border-t border-[#cccccc] bg-white min-h-screen">
                     <div className="mx-auto max-w-[1200px] px-4 py-3 space-y-3">
                         <Link to="/coming-soon" className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">Job Database</Link>
                         <Link to={LOGIN_URL} className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">SQL Practice</Link>

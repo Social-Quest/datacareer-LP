@@ -110,7 +110,7 @@ function DataJob() {
                 </div>
               </Reveal>
 
-              <Reveal className={`flex items-center justify-center ${index % 2 === 1 ? 'md:order-1' : ''}`} delay={200} variant="blur-up">
+              <Reveal className={`flex items-start ${index % 2 === 1 ? 'md:order-1' : ''}`} delay={200} variant="blur-up">
                 <img
                   src={image}
                   alt="Section preview"
