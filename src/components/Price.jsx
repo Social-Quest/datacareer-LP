@@ -76,7 +76,7 @@ function Price() {
 
   return (
     <section id="pricing" className="w-full bg-white">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-12 md:py-30">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-12 md:py-30 md:pb-0">
         <div className="text-center">
           <Reveal as="h2" className="font-roboto text-[#121f41] text-[26px] sm:text-[25px] md:text-[30px] lg:text-[32px] font-semibold leading-[38px]" variant="fade-up">
             Hack your way to a new data job.
@@ -130,8 +130,8 @@ function Price() {
                 <Link
                   to={LOGIN_URL}
                   className={`btn-shine w-full sm:w-[220px] md:w-[240px] inline-flex items-center justify-center font-inter text-sm md:text-base rounded-[30px] px-6 py-3 transition-colors font-semibold cursor-pointer  ${plan.highlight
-                      ? 'bg-[#448aff] text-black hover:bg-[#2563EB] '
-                      : 'bg-[#eaf1f9] text-[#121f41] border border-[#d0e3ec] hover:bg-[#dfeaf4]'
+                    ? 'bg-[#448aff] text-black hover:bg-[#2563EB] '
+                    : 'bg-[#eaf1f9] text-[#121f41] border border-[#d0e3ec] hover:bg-[#dfeaf4]'
                     }`}
                 >
                   {plan.cta}
@@ -179,44 +179,43 @@ function Price() {
           </div>
         </Reveal>
 
-       {/** Mobile Feature-first comparison */} 
-<Reveal className="mt-12 md:hidden" variant="fade-up">
-  <div className="space-y-6">
-    {Array.from(new Set(plans.flatMap((p) => p.features.map((f) => f.label)))).map(
-      (label, idx) => (
-        <div
-          key={`mobile-feature-${label}`}
-          className="rounded-xl border border-[#E6ECF2] bg-white p-4 shadow-sm"
-        >
-          {/* Feature Title */}
-          <h4 className="mb-3 text-sm font-semibold text-[#121f41]">
-            {label}
-          </h4>
-
-          {/* Plans under this feature */}
-          <div className="flex flex-wrap gap-2">
-            {plans.map((p) => {
-              const found = p.features.find((f) => f.label === label);
-              const available = Boolean(found?.available);
-              return (
-                <span
-                  key={`feat-${p.id}-${label}`}
-                  className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium ${
-                    available
-                      ? "bg-[#eaf1f9] text-[#121f41]"
-                      : "bg-gray-200 text-gray-500 line-through"
-                  }`}
+        {/** Mobile Feature-first comparison */}
+        <Reveal className="mt-12 md:hidden" variant="fade-up">
+          <div className="space-y-6">
+            {Array.from(new Set(plans.flatMap((p) => p.features.map((f) => f.label)))).map(
+              (label, idx) => (
+                <div
+                  key={`mobile-feature-${label}`}
+                  className="rounded-xl border border-[#E6ECF2] bg-white p-4 shadow-sm"
                 >
-                  {p.name} {available ? "✓" : "×"}
-                </span>
-              );
-            })}
+                  {/* Feature Title */}
+                  <h4 className="mb-3 text-sm font-semibold text-[#121f41]">
+                    {label}
+                  </h4>
+
+                  {/* Plans under this feature */}
+                  <div className="flex flex-wrap gap-2">
+                    {plans.map((p) => {
+                      const found = p.features.find((f) => f.label === label);
+                      const available = Boolean(found?.available);
+                      return (
+                        <span
+                          key={`feat-${p.id}-${label}`}
+                          className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium ${available
+                              ? "bg-[#eaf1f9] text-[#121f41]"
+                              : "bg-gray-200 text-gray-500 line-through"
+                            }`}
+                        >
+                          {p.name} {available ? "✓" : "×"}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              )
+            )}
           </div>
-        </div>
-      )
-    )}
-  </div>
-</Reveal>
+        </Reveal>
 
 
       </div>
