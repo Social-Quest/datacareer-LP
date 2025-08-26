@@ -83,11 +83,16 @@ function Footer() {
             <h3 className="text-sm font-semibold mb-3 text-[#0C153E]">Contact us:</h3>
             <ul className="space-y-3 text-[14px] text-[#0C153E]">
               <li>
-                <Link to="/contact" className="hover:underline cursor-pointer">
+                <Link to="mailto:info@datacareer.app" className="hover:underline cursor-pointer">
                   info@datacareer.app
                 </Link>
               </li>
               <li className="text-[#6b7280]">[We will respond in 24 hours]</li>
+              <li>
+                <Link to="/contact" className="hover:underline cursor-pointer">
+                  Contact us
+                </Link>
+              </li>
             </ul>
             <h4 className="text-sm font-semibold mt-6 mb-2 text-[#0C153E]">Address:</h4>
             <p className="text-[14px]">Sydney, Australia</p>
