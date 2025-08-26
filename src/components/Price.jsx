@@ -77,6 +77,7 @@ function Price() {
   return (
     <section id="pricing" className="w-full bg-white">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-12 md:py-30 md:pb-0">
+        
         <div className="text-center">
           <Reveal as="h2" className="font-roboto text-[#121f41] text-[26px] sm:text-[25px] md:text-[30px] lg:text-[32px] font-semibold leading-[38px]" variant="fade-up">
             Hack your way to a new data job.
@@ -216,7 +217,6 @@ function Price() {
             )}
           </div>
         </Reveal>
-
 
       </div>
     </section>
