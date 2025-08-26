@@ -50,9 +50,6 @@ function Header() {
                     <Link to={LOGIN_URL} className="text-[15px] sm:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 h-10 flex items-center rounded-full hover:bg-gray-50">
                         SQL Practice
                     </Link>
-                    <Link to="/contact" className="text-[15px] sm:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 h-10 flex items-center rounded-full hover:bg-gray-50">
-                        Contact
-                    </Link>
                     <span
                         className="text-[15px] sm:text-[16px] font-bold leading-6 px-4 sm:px-2.5 py-1 rounded-full lg:p-1 lg:text-[15px]"
                         style={{
@@ -110,7 +107,6 @@ function Header() {
                     <div className="mx-auto max-w-[1200px] px-4 py-3 space-y-3">
                         <Link to="/coming-soon" className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">Job Database</Link>
                         <Link to={LOGIN_URL} className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">SQL Practice</Link>
-                        <Link to="/contact" className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">Contact</Link>
                         <span
                             className="btn-shine inline-block text-[15px] sm:text-[16px] font-normal leading-6 px-3 py-1.5 rounded-[10px]"
                             style={{

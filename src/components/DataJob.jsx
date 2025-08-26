@@ -76,8 +76,8 @@ function DataJob() {
 
         <div className="mt-8 md:mt-10 space-y-12 md:space-y-16 lg:space-y-20">
           {sections.map(({ id, title, blurb, bullets, cta, image }, index) => (
-            <div key={id} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-14 items-center">
-              <Reveal className={`${index % 2 === 1 ? 'md:order-2' : ''} w-full`} variant="fade-right">
+            <div key={id} className="grid grid-cols-1 lg:grid-cols-5 gap-4 items-stretch">
+              <Reveal className="w-full lg:col-span-2" variant="fade-right">
                 <h3 className="text-[#e9724c] text-lg sm:text-xl md:text-2xl font-semibold leading-[1.2] tracking-[-0.5px] md:tracking-[-1px] font-inter">
                   {title}
                 </h3>
@@ -110,11 +110,11 @@ function DataJob() {
                 </div>
               </Reveal>
 
-              <Reveal className={`flex items-start ${index % 2 === 1 ? 'md:order-1' : ''}`} delay={200} variant="blur-up">
+              <Reveal className="flex items-stretch lg:col-span-3" delay={200} variant="blur-up">
                 <img
                   src={image}
                   alt="Section preview"
-                  loading="lazy" decoding="async" className="w-full max-w-[520px] sm:max-w-[580px] lg:max-w-[620px] h-auto object-contain drop-shadow rounded-xl"
+                  loading="lazy" decoding="async" className="w-full h-full object-cover drop-shadow rounded-xl"
                 />
               </Reveal>
             </div>

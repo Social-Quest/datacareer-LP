@@ -3,7 +3,7 @@ import logo from '../assets/DataCareerLogo.png'
 import { FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa6'
 import { SiThreads } from 'react-icons/si'
 import { Link } from 'react-router-dom'
-import Reveal from './Reveal'
+import Reveal from './Reveal' 
 
 const socialLinks = [
   { name: 'Threads', to: 'https://www.threads.com/@datacareer.app', icon: <SiThreads className="h-5 w-5" /> },
