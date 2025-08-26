@@ -44,14 +44,25 @@ function Header() {
                 </div>
 
                 <nav className="hidden lg:flex items-center gap-2">
-                    <Link to="/coming-soon" className="text-[15px] sm:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 h-10 flex items-center rounded-full hover:bg-gray-50">
+                    <Link to="/coming-soon" className="text-[15px] sm:text-[14px] xl:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 xl:px-2 h-10 xl:h-9 flex items-center rounded-full hover:bg-gray-50">
                         Job Database
                     </Link>
-                    <Link to={LOGIN_URL} className="text-[15px] sm:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 h-10 flex items-center rounded-full hover:bg-gray-50">
+                    <Link to={LOGIN_URL} className="text-[15px] sm:text-[13px] xl:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 xl:px-2 h-10 xl:h-9 flex items-center rounded-full hover:bg-gray-50">
                         SQL Practice
                     </Link>
+                    <button
+                        onClick={() => {
+                            const priceSection = document.getElementById('pricing')
+                            if (priceSection) {
+                                priceSection.scrollIntoView({ behavior: 'smooth' })
+                            }
+                        }}
+                        className="text-[15px] sm:text-[14px] xl:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 xl:px-2 h-10 xl:h-9 flex items-center rounded-full hover:bg-gray-50 cursor-pointer"
+                    >
+                        Price
+                    </button>
                     <span
-                        className="text-[15px] sm:text-[16px] font-bold leading-6 px-4 sm:px-2.5 py-1 rounded-full lg:p-1 lg:text-[15px]"
+                        className="text-[15px] sm:text-[14px] xl:text-[16px] font-bold leading-6 px-4 sm:px-2 xl:px-2.5 py-1 rounded-full"
                         style={{
                             backgroundColor: '#abd3fa',
                             color: 'var(--color_text_default, #0C153E)'
@@ -64,7 +75,7 @@ function Header() {
                 <div className="hidden lg:flex items-center gap-3">
                     <Link
                         to={REGISTER_URL}
-                        className="btn-shine inline-flex items-center justify-center h-10 px-4 md:px-5 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 lg:p-1 lg:text-[16px] lg:px-3 transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_rgba(9,21,64,0.45)] "
+                        className="btn-shine inline-flex items-center justify-center h-10 xl:h-9 px-4 md:px-3 xl:px-5 rounded-full text-[15px] sm:text-[13px] xl:text-[16px] font-bold text-white shadow-lg hover:opacity-95 transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_rgba(9,21,64,0.45)] "
                         style={{
                             backgroundColor: '#091540',
                         }}
@@ -73,7 +84,7 @@ function Header() {
                     </Link>
                     <Link
                         to={LOGIN_URL}
-                        className="btn-shine inline-flex items-center justify-center h-10 px-4 md:px-5 rounded-full text-[15px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 lg:text-[15px] transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_rgba(9,21,64,0.45)]"
+                        className="btn-shine inline-flex items-center justify-center h-10 xl:h-9 px-4 md:px-3 xl:px-5 rounded-full text-[15px] sm:text-[13px] xl:text-[16px] font-bold text-white shadow-lg hover:opacity-95 transition-transform duration-300 hover:-trans late-y-0.5 hover:shadow-[0_8px_24px_-10px_rgba(9,21,64,0.25)]"
                         style={{
                             backgroundColor: '#091540',
                         }}
@@ -107,6 +118,18 @@ function Header() {
                     <div className="mx-auto max-w-[1200px] px-4 py-3 space-y-3">
                         <Link to="/coming-soon" className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">Job Database</Link>
                         <Link to={LOGIN_URL} className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">SQL Practice</Link>
+                        <button
+                            onClick={() => {
+                                const priceSection = document.getElementById('pricing')
+                                if (priceSection) {
+                                    priceSection.scrollIntoView({ behavior: 'smooth' })
+                                }
+                                setMobileOpen(false)
+                            }}
+                            className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50 cursor-pointer w-full text-left"
+                        >
+                            Price
+                        </button>
                         <span
                             className="btn-shine inline-block text-[15px] sm:text-[16px] font-normal leading-6 px-3 py-1.5 rounded-[10px]"
                             style={{
