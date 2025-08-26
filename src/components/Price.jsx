@@ -13,10 +13,11 @@ function Price() {
       cta: 'SIGN UP',
       highlight: false,
       features: [
-        { label: 'Access to 10 of the 300+ jobs added daily', available: true },
-        { label: 'Complete access to job tracker', available: true },
-        { label: 'SQL Practice', available: true },
-        { label: '30 days worth of data', available: false },
+        { label: 'Access to 5 daily jobs', available: true },
+        { label: 'Basic job tracker', available: true },
+        { label: 'Email alerts (weekly)', available: true },
+        { label: 'SQL Practice', available: false },
+        { label: '30-day job history', available: false },
         { label: 'Download as CSV', available: false },
       ],
     },
@@ -28,19 +29,17 @@ function Price() {
       cta: 'SIGN UP',
       highlight: true,
       features: [
-        // Match Free plan labels so the first two rows show as available for Pro
-        { label: 'Access to 10 of the 300+ jobs added daily', available: true },
-        { label: 'Complete access to job tracker', available: true },
-        // Pro-specific phrasing and additional capabilities
-        { label: '300+ curated data job added daily at 7 am AEST', available: true },
-        { label: 'Access to job tracker', available: true },
+        { label: 'Access to 5 daily jobs', available: true },
+        { label: 'Basic job tracker', available: true },
+        { label: 'Email alerts (weekly)', available: true },
         { label: 'SQL Practice', available: true },
-        { label: '30 days worth of data', available: true },
+        { label: '30-day job history', available: true },
         { label: 'Download as CSV', available: true },
+        { label: '300+ curated jobs daily at 7 AM AEST', available: true },
       ],
     },
   ]
-
+  
   const CheckIcon = ({ className = '' }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"

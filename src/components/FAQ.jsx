@@ -22,6 +22,27 @@ const faqs = [
     q: 'Is this only for Australia?',
     a: 'We are laser-focused on Australia for now to provide the most relevant roles and interview prep content.',
   },
+  {
+    q: 'How do I upgrade from Free to Pro?',
+    a: 'Log in to your account, go to Billing, and choose the Pro plan. Your upgrade is instant.',
+  },
+  {
+    q: 'Do you offer a trial period?',
+    a: 'Yes, we provide a 7-day free trial of the Pro plan so you can explore all features.',
+  },
+  {
+    q: 'Can I download the job listings?',
+    a: 'Yes, Pro users can export the full job database as a CSV file anytime.',
+  },
+  {
+    q: 'What payment methods do you accept?',
+    a: 'We accept major credit cards, PayPal, and corporate invoicing for annual plans.',
+  },
+  {
+    q: 'Is my data secure?',
+    a: 'Absolutely. We use industry-standard encryption and never share your data with third parties.',
+  },
+  
 ]
 
 function Item({ q, a, idx }) {
