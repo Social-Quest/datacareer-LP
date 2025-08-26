@@ -50,17 +50,6 @@ function Header() {
                     <Link to={LOGIN_URL} className="text-[15px] sm:text-[13px] xl:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 xl:px-2 h-10 xl:h-9 flex items-center rounded-full hover:bg-gray-50">
                         SQL Practice
                     </Link>
-                    <button
-                        onClick={() => {
-                            const priceSection = document.getElementById('pricing')
-                            if (priceSection) {
-                                priceSection.scrollIntoView({ behavior: 'smooth' })
-                            }
-                        }}
-                        className="text-[15px] sm:text-[14px] xl:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 xl:px-2 h-10 xl:h-9 flex items-center rounded-full hover:bg-gray-50 cursor-pointer"
-                    >
-                        Price
-                    </button>
                     <span
                         className="text-[15px] sm:text-[14px] xl:text-[16px] font-bold leading-6 px-4 sm:px-2 xl:px-2.5 py-1 rounded-full"
                         style={{
@@ -114,22 +103,10 @@ function Header() {
 
             {/* Mobile menu */}
             {mobileOpen && (
-                    <div className="lg:hidden border-t border-[#cccccc] bg-white min-h-screen">
+                    <div className="lg:hidden border-t border-[#cccccc] bg-white">
                     <div className="mx-auto max-w-[1200px] px-4 py-3 space-y-3">
                         <Link to="/coming-soon" className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">Job Database</Link>
                         <Link to={LOGIN_URL} className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">SQL Practice</Link>
-                        <button
-                            onClick={() => {
-                                const priceSection = document.getElementById('pricing')
-                                if (priceSection) {
-                                    priceSection.scrollIntoView({ behavior: 'smooth' })
-                                }
-                                setMobileOpen(false)
-                            }}
-                            className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50 cursor-pointer w-full text-left"
-                        >
-                            Price
-                        </button>
                         <span
                             className="btn-shine inline-block text-[15px] sm:text-[16px] font-normal leading-6 px-3 py-1.5 rounded-[10px]"
                             style={{

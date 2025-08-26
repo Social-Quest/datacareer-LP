@@ -27,7 +27,7 @@ const steps = [
 
 function HowItWorks() {
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-[#f3f3f3]">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         <div className="text-center">
           <Reveal as="h2" className="font-roboto text-[#091540] text-[26px] sm:text-[32px] md:text-[38px] font-semibold leading-tight" variant="fade-up">

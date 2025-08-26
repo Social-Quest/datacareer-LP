@@ -73,7 +73,7 @@ function Item({ q, a, idx }) {
   }, [open])
 
   return (
-    <Reveal as="div" className="border-b border-[#E6ECF2] py-4" delay={idx * 80} variant={idx % 2 ? 'fade-left' : 'fade-right'}>
+    <Reveal as="div" className="border-b border-[#E6ECF2] py-4 bg-white rounded-2xl p-4 mb-4" delay={idx * 80} variant={idx % 2 ? 'fade-left' : 'fade-right'}>
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -99,8 +99,8 @@ function Item({ q, a, idx }) {
 
 function FAQ() {
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto max-w-[900px] px-4 sm:px-6 lg:px-8 py-12 md:py-20 md:pt-0 ">
+    <section className="w-full bg-[#f3f3f3]">
+      <div className="mx-auto max-w-[900px] px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         <div className="text-center">
           <Reveal as="h2" className="font-roboto text-[#091540] text-[26px] sm:text-[32px] md:text-[38px] font-semibold leading-tight" variant="fade-up">
             Frequently asked questions

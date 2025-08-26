@@ -91,7 +91,7 @@ function Footer() {
               <li>
                 <Link to="/contact" className="hover:underline cursor-pointer">
                   Contact us
-                </Link>
+                </Link> 
               </li>
             </ul>
             <h4 className="text-sm font-semibold mt-6 mb-2 text-[#0C153E]">Address:</h4>
