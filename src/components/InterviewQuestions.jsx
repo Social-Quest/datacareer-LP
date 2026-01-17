@@ -115,9 +115,8 @@ function InterviewQuestions() {
     ];
 
     return (
-        <section id="simulations" className="w-full bg-white py-12 md:py-20">
+        <section id="simulations" className="w-full bg-white py-12 md:py-20 overflow-hidden">
             <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-
                 {header && (
                     <div className="text-center mb-12">
                         <Reveal as="h2" className="text-2xl md:text-3xl font-bold text-gray-900 mb-4" variant="fade-up">
@@ -133,7 +132,7 @@ function InterviewQuestions() {
                 )}
 
                 {/* Desktop Table View */}
-                <div className="hidden md:block overflow-x-auto">
+                <div className="hidden md:block overflow-x-auto overflow-y-hidden">
                     <Reveal variant="fade-up" delay={150}>
                         <table className="w-full border-collapse bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
                             <thead className="bg-[#f8f9fb] border-b border-gray-200">
