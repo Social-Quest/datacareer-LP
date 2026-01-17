@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchHowItWorks } from '../store/slices/howItWorksSlice'
 import { REGISTER_URL } from '../config/env'
 import { FaRocket, FaMagnifyingGlass, FaDatabase } from 'react-icons/fa6'
 import Reveal from './Reveal'
@@ -26,16 +28,29 @@ const steps = [
 ]
 
 function HowItWorks() {
+  const dispatch = useDispatch()
+  const { data: howData } = useSelector((state) => state.howItWorks)
+
+  useEffect(() => {
+    dispatch(fetchHowItWorks())
+  }, [dispatch])
+
+  if (!howData) return null
+
   return (
     <section className="w-full bg-[#f3f3f3]">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         <div className="text-center">
-          <Reveal as="h2" className="font-roboto text-[#091540] text-[26px] sm:text-[32px] md:text-[38px] font-semibold leading-tight" variant="fade-up">
-            How it works
-          </Reveal>
-          <Reveal as="p" className="font-inter text-[#667085] mt-3 text-base sm:text-lg" delay={150} variant="fade-up">
-            Three steps to accelerate your data job hunt in Australia
-          </Reveal>
+          {howData.title && (
+            <Reveal as="h2" className="font-roboto text-[#091540] text-[26px] sm:text-[32px] md:text-[38px] font-semibold leading-tight" variant="fade-up">
+              <span dangerouslySetInnerHTML={{ __html: howData.title }} />
+            </Reveal>
+          )}
+          {howData.subtitle && (
+            <Reveal as="p" className="font-inter text-[#667085] mt-3 text-base sm:text-lg" delay={150} variant="fade-up">
+              {howData.subtitle}
+            </Reveal>
+          )}
         </div>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">

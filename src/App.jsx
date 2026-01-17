@@ -17,13 +17,17 @@ import PrivacyPolicy from './components/PrivacyPolicy'
 import TermsOfService from './components/TermsOfService'
 import Contact from './components/Contact'
 
+import InterviewQuestions from './components/InterviewQuestions'
+import Hero from './components/Hero'
+import ComingSoonFeatures from './components/ComingSoonFeatures'
+
 function App() {
 
   return (
     <>
       <div className="min-h-screen bg-gray-50 text-gray-900">
         <div className="sticky top-0 z-[50]">
-          <BetaBanner />  
+          <BetaBanner />
           <Header />
         </div>
         <main className="w-full">
@@ -38,11 +42,14 @@ function App() {
                   <DataJob />
                   <DataSkies />
                   <DataSQL />
+                  <InterviewQuestions />
+                  <Hero />
                   <Price />
+                  <ComingSoonFeatures />
                   <HowItWorks />
                   <Map />
                   <FAQ />
-                  </>
+                </>
               )}
             />
             <Route path="/coming-soon" element={<ComingSoon />} />

@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { LOGIN_URL } from '../config/env'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchHeroData } from '../store/slices/heroSlice'
 import spreadsheet from '../assets/spreadeSheet.svg'
 
 function Pill({ children }) {
@@ -24,7 +26,13 @@ function CTAButton() {
 
 function SpreadSheet() {
   const sectionRef = useRef(null)
+  const dispatch = useDispatch()
+  const { data: heroData, loading, error } = useSelector((state) => state.hero)
   const [inView, setInView] = useState(false)
+
+  useEffect(() => {
+    dispatch(fetchHeroData())
+  }, [dispatch])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -50,17 +58,20 @@ function SpreadSheet() {
   return (
     <section ref={sectionRef} className="font-roboto mx-auto w-full max-w-[1200px] py-8 md:py-12 lg:py-[96px] grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center bg-white px-4 sm:px-6 lg:px-8 " >
       <div>
-        <div className={`transition-all duration-700 ease-out ${inView ? shown : hidden}`}>
-          <Pill>
-            <span className="font-inter text-[12px] sm:text-sm">Finding your 1st tech job in Australia is tough 😖</span>
-          </Pill>
-        </div>
+        {heroData?.badgeText && (
+          <div className={`transition-all duration-700 ease-out ${inView ? shown : hidden}`}>
+            <Pill>
+              <span className="font-inter text-[12px] sm:text-sm">{heroData.badgeText}</span>
+            </Pill>
+          </div>
+        )}
 
-        <h1
-          className={`mt-6 text-[30px] leading-[1.2] sm:text-[36px] md:text-[44px] lg:text-[48px] text-[#091540] font-semibold tracking-[-2px] transition-all duration-700 ease-out ${inView ? shown : hidden} delay-150`}
-        >
-          Our app helps you <span className="text-[#7692ff]">accelerate</span> your <span className="text-[#e9724c]">#data</span> job hunt
-        </h1>
+        {heroData?.mainHeading && (
+          <h1
+            className={`mt-6 text-[30px] leading-[1.2] sm:text-[36px] md:text-[44px] lg:text-[48px] text-[#091540] font-semibold tracking-[-2px] transition-all duration-700 ease-out ${inView ? shown : hidden} delay-150`}
+            dangerouslySetInnerHTML={{ __html: heroData.mainHeading }}
+          />
+        )}
 
         <div className={`mt-6 md:mt-8 max-w-sm transition-all duration-700 ease-out ${inView ? shown : hidden} delay-300`}>
           <CTAButton />

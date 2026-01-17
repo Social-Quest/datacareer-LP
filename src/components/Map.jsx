@@ -1,18 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchMapSection } from '../store/slices/mapSectionSlice'
 import { LOGIN_URL } from '../config/env'
 import mapImage from '../assets/map.png'
 import Reveal from './Reveal'
 
 
 function Map() {
-  const features = [
-    'Job database updated daily',
-    'Job tracker',
-    'SQL Practice [Coming Soon]',
-    'Free live data analytics workshop',
-    'Actively adding new features',
-  ]
+  const dispatch = useDispatch()
+  const { data: mapData } = useSelector((state) => state.mapSection)
+
+  useEffect(() => {
+    dispatch(fetchMapSection())
+  }, [dispatch])
 
   const CheckIcon = () => (
     <svg
@@ -33,6 +34,8 @@ function Map() {
     </svg>
   )
 
+  if (!mapData) return null
+
   return (
     <section className="w-full bg-white shadow-[0_0_16px_0_rgb(237,237,237)]">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-10 md:py-30">
@@ -48,18 +51,22 @@ function Map() {
           </Reveal>
 
           <div className="flex flex-col items-start">
-            <Reveal as="h2" className="font-roboto text-[#e9724c] text-[26px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-semibold leading-snug" variant="fade-up">
-              Your all-in-one data career toolkit.
-            </Reveal>
+            {mapData.title && (
+              <Reveal as="h2" className="font-roboto text-[#e9724c] text-[26px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-semibold leading-snug" variant="fade-up">
+                {mapData.title}
+              </Reveal>
+            )}
 
-            <Reveal as="ul" className="mt-6 space-y-4" delay={150} variant="skew-up">
-              {features.map((item) => (
-                <li key={item} className="flex items-center gap-3">
-                  <CheckIcon />
-                  <span className="font-inter text-[15px] sm:text-base text-[#0C153E]">{item}</span>
-                </li>
-              ))}
-            </Reveal>
+            {mapData.points && (
+              <Reveal as="ul" className="mt-6 space-y-4" delay={150} variant="skew-up">
+                {mapData.points.map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-3">
+                    <CheckIcon />
+                    <span className="font-inter text-[15px] sm:text-base text-[#0C153E]">{item}</span>
+                  </li>
+                ))}
+              </Reveal>
+            )}
 
             <Reveal className="mt-8" delay={250} variant="zoom-in">
               <Link
