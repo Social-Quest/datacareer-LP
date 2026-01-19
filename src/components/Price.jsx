@@ -61,7 +61,7 @@ function Price() {
   ] : []
 
   return (
-    <section id="pricing" className="w-full bg-white">
+    <section id="pricing" className="w-full bg-[#f3f3f3]">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-12 md:py-30">
 
         {header && (
