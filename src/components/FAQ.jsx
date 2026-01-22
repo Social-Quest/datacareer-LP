@@ -13,10 +13,6 @@ const faqs = [
     a: 'Every morning at 7 am AEST, with smaller refreshes throughout the day for trending roles.',
   },
   {
-    q: 'What’s included in Free vs Pro?',
-    a: 'Free provides a taste: limited roles and access. Pro unlocks the full, curated database, job tracker, SQL practice (when launched), and CSV export.',
-  },
-  {
     q: 'Can I cancel anytime?',
     a: 'Yes. You can cancel in a click and you will retain access until the end of the billing cycle.',
   },
@@ -25,20 +21,12 @@ const faqs = [
     a: 'We are laser-focused on Australia for now to provide the most relevant roles and interview prep content.',
   },
   {
-    q: 'How do I upgrade from Free to Pro?',
-    a: 'Log in to your account, go to Billing, and choose the Pro plan. Your upgrade is instant.',
-  },
-  {
     q: 'Do you offer a trial period?',
     a: 'Yes, we provide a 7-day free trial of the Pro plan so you can explore all features.',
   },
   {
-    q: 'Can I cancel my subscription?',
-    a: 'You can cancel your plan whenever you’d like.',
-  },
-  {
-    q: 'What happens when my trial ends?',
-    a: 'When your trial period ends, your account will automatically be downgraded to our free plan, with limited access to features.',
+    q: 'What happens when my trial ends based on current flow?',
+    a: 'You can still log in after your trial ends. To keep using premium features, simply upgrade anytime - no automatic charges.',
   },
   {
     q: 'Can I switch between plans?',
