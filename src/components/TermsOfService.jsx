@@ -123,6 +123,30 @@ function TermsOfService() {
           <li>Non‑data roles or duplicates may occasionally appear.</li>
         </ul>
 
+        <h3 className="mt-6 text-[18px] font-semibold">17.1 Data Disclaimer</h3>
+        <p className="mt-3 text-[14px] leading-6 font-semibold">IMPORTANT NOTICE:</p>
+        <ul className="mt-3 space-y-2 list-disc pl-5 text-[14px] leading-6">
+          <li>All data generated in this project is entirely synthetic and fictitious. The datasets, customer records and all associated information have been artificially created for educational and analytical purposes only.</li>
+          <li>This synthetic data does not represent, reflect, or derive from any actual data, operations, customers, employees, or business practices of these companies or any other real organization. Any resemblance to actual persons, businesses, events, or data is purely coincidental.</li>
+          <li>The scenarios, business problems, and analytical insights presented are hypothetical examples designed to demonstrate data analytics techniques and SQL querying skills in the context of the energy and utilities industry.</li>
+          <li>This project is intended solely for:
+            <ul className="mt-2 space-y-1 list-disc pl-5">
+              <li>Educational purposes</li>
+              <li>Skills development</li>
+              <li>Portfolio demonstration</li>
+              <li>Learning data analytics methodologies</li>
+            </ul>
+          </li>
+          <li>Users should not:
+            <ul className="mt-2 space-y-1 list-disc pl-5">
+              <li>Use this data for any commercial purposes</li>
+              <li>Make business decisions based on these synthetic datasets</li>
+              <li>Assume any correlation with real-world companies operations or data</li>
+              <li>Redistribute this data claiming it represents actual company information</li>
+            </ul>
+          </li>
+        </ul>
+
         <h2 className="mt-8 text-[22px] font-semibold">18. Changes to the Facilities and Terms</h2>
         <p className="mt-3 text-[14px] leading-6">We may change the Website, Content, or these Terms at any time. You are bound by changes on first use after change.</p>
 
