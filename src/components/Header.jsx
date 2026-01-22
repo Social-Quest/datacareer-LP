@@ -44,7 +44,7 @@ function Header() {
                 </div>
 
                 <nav className="hidden lg:flex items-center gap-2">
-                    <Link to="/coming-soon" className="text-[15px] sm:text-[14px] xl:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 xl:px-2 h-10 xl:h-9 flex items-center rounded-full hover:bg-gray-50">
+                    <Link to={LOGIN_URL} className="text-[15px] sm:text-[14px] xl:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 xl:px-2 h-10 xl:h-9 flex items-center rounded-full hover:bg-gray-50">
                         Job Database
                     </Link>
                     <Link to={LOGIN_URL} className="text-[15px] sm:text-[13px] xl:text-[16px] font-medium text-[#0C153E] leading-6 px-3 sm:px-4 xl:px-2 h-10 xl:h-9 flex items-center rounded-full hover:bg-gray-50">
