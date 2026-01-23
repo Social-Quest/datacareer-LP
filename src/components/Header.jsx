@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import logo from '../assets/DataCareerLogo.png'
 import { Link, useNavigate } from 'react-router-dom'
-import { LOGIN_URL, REGISTER_URL } from '../config/env'
+import { LOGIN_URL, REGISTER_URL, NAVIGATE_URL } from '../config/env'
 
 function Header() {
     const [mobileOpen, setMobileOpen] = useState(false)
@@ -51,11 +51,12 @@ function Header() {
                         SQL Practice
                     </Link>
                     <span
-                        className="text-[15px] sm:text-[14px] xl:text-[16px] font-bold leading-6 px-4 sm:px-2 xl:px-2.5 py-1 rounded-full"
+                        className="text-[15px] sm:text-[14px] xl:text-[16px] font-bold leading-6 px-4 sm:px-2 xl:px-2.5 py-1 rounded-full cursor-pointer"
                         style={{
                             backgroundColor: '#abd3fa',
                             color: 'var(--color_text_default, #0C153E)'
                         }}
+                        onClick={() => window.open(NAVIGATE_URL, "_blank")}
                     >
                         Job-ready program
                     </span>
@@ -103,16 +104,17 @@ function Header() {
 
             {/* Mobile menu */}
             {mobileOpen && (
-                    <div className="lg:hidden border-t border-[#cccccc] bg-white">
+                <div className="lg:hidden border-t border-[#cccccc] bg-white">
                     <div className="mx-auto max-w-[1200px] px-4 py-3 space-y-3">
                         <Link to="/coming-soon" className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">Job Database</Link>
                         <Link to={LOGIN_URL} className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">SQL Practice</Link>
                         <span
-                            className="btn-shine inline-block text-[15px] sm:text-[16px] font-normal leading-6 px-3 py-1.5 rounded-[10px]"
+                            className="btn-shine inline-block text-[15px] sm:text-[16px] font-normal leading-6 px-3 py-1.5 rounded-[10px] cursor-pointer"
                             style={{
                                 backgroundColor: '#abd3fa',
                                 color: 'var(--color_text_default, #0C153E)'
                             }}
+                            onClick={() => window.open(NAVIGATE_URL, "_blank")}
                         >
                             Job-ready program
                         </span>
