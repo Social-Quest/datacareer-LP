@@ -20,6 +20,7 @@ import Contact from './components/Contact'
 import InterviewQuestions from './components/InterviewQuestions'
 import Hero from './components/Hero'
 import ComingSoonFeatures from './components/ComingSoonFeatures'
+import Careers from './components/Careers'
 
 function App() {
 
@@ -56,6 +57,7 @@ function App() {
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/careers" element={<Careers />} />
           </Routes>
         </main>
         <Footer />
