@@ -3,7 +3,7 @@ import logo from '../assets/DataCareerLogo.png'
 import { FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa6'
 import { SiThreads } from 'react-icons/si'
 import { Link } from 'react-router-dom'
-import Reveal from './Reveal' 
+import Reveal from './Reveal'
 
 const socialLinks = [
   { name: 'Threads', to: 'https://www.threads.com/@datacareer.app', icon: <SiThreads className="h-5 w-5" /> },
@@ -91,7 +91,7 @@ function Footer() {
               <li>
                 <Link to="/contact" className="hover:underline cursor-pointer">
                   Contact us
-                </Link> 
+                </Link>
               </li>
             </ul>
             <h4 className="text-sm font-semibold mt-6 mb-2 text-[#0C153E]">Address:</h4>
@@ -109,6 +109,11 @@ function Footer() {
               <li>
                 <Link to="/terms" className="hover:underline">
                   Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link to="/careers" className="hover:underline">
+                  Careers
                 </Link>
               </li>
             </ul>
