@@ -28,18 +28,6 @@ const faqs = [
     q: 'What happens when my trial ends based on current flow?',
     a: 'You can still log in after your trial ends. To keep using premium features, simply upgrade anytime - no automatic charges.',
   },
-  {
-    q: 'Can I switch between plans?',
-    a: 'Yes, you can upgrade or downgrade your plan at any time from your account settings.',
-  },
-  {
-    q: 'Do you offer a refund policy?',
-    a: 'We offer a 30-day money-back guarantee if you are not satisfied with our service.',
-  },
-  {
-    q: 'Is there a discount for annual billing?',
-    a: 'Yes, we offer a 20% discount if you choose to be billed annually.',
-  },
 ]
 
 const Item = ({ q, a, idx }) => {
