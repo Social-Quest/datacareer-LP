@@ -106,7 +106,7 @@ function Header() {
             {mobileOpen && (
                 <div className="lg:hidden border-t border-[#cccccc] bg-white">
                     <div className="mx-auto max-w-[1200px] px-4 py-3 space-y-3">
-                        <Link to="/coming-soon" className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">Job Database</Link>
+                        <Link to={LOGIN_URL} className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">Job Database</Link>
                         <Link to={LOGIN_URL} className="block text-[15px] sm:text-[16px] font-normal text-[#0C153E] leading-6 px-3 py-2 rounded-lg hover:bg-gray-50">SQL Practice</Link>
                         <span
                             className="btn-shine inline-block text-[15px] sm:text-[16px] font-normal leading-6 px-3 py-1.5 rounded-[10px] cursor-pointer"
@@ -120,7 +120,7 @@ function Header() {
                         </span>
                         <div className="pt-2 flex items-center gap-2">
                             <Link
-                                to="/coming-soon"
+                                to={REGISTER_URL}
                                 className="btn-shine flex-1 inline-flex items-center justify-center h-10 px-3 rounded-full text-[11px] sm:text-[16px] font-bold text-white shadow-lg hover:opacity-95 transition-transform duration-200 active:scale-[0.98]"
                                 style={{ backgroundColor: 'var(--color_primary_default, #091540)' }}
                             >
