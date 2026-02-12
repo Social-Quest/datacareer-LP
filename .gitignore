@@ -6,8 +6,6 @@ dist/
 build/
 
 # Environment variables
-.env
-.env.local
 .env.*.local
 
 # Logs
@@ -21,10 +19,10 @@ pnpm-debug.log*
 Thumbs.db
 
 # Editor settings
-.vscode/
 .idea/
 *.swp
 
 # Cache
 .cache/
 *.tsbuildinfo
+config.bat
